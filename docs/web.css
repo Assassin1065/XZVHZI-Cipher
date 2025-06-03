@@ -171,10 +171,6 @@ button:active {
     color: white;
 }
 
-.light-mode .social-button i {
-    color: #333;
-}
-
 .social-button svg {
     width: 1.2em;
     height: 1.2em;
