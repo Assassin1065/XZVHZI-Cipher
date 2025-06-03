@@ -1,0 +1,197 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+    --card-bg: linear-gradient(145deg, #3c3c3c, #2f2f2f);
+    --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    --text-color: #d8d8d8;
+    --label-color: #a100ff;
+    --input-bg: #454545;
+    --input-border: #555;
+    --input-focus-border: #a100ff;
+    --input-focus-shadow: rgba(161, 0, 255, 0.5);
+    --button-bg: linear-gradient(45deg, #a100ff, #c07bff);
+    --button-shadow: rgba(161, 0, 255, 0.55);
+    --result-valid-border: #a100ff;
+    --result-valid-shadow: rgba(161, 0, 255, 0.3);
+    --error-color: #ff4d4d;
+    --discord-bg: linear-gradient(45deg, #5865F2, #8a4af3);
+    --github-bg: linear-gradient(45deg, #24292e, #a100ff);
+    --youtube-bg: linear-gradient(45deg, #FF0000, #c07bff);
+    --twitter-bg: linear-gradient(45deg, #1DA1F2, #a100ff);
+}
+
+.light-mode {
+    --bg-gradient: linear-gradient(135deg, #f5f7fa, #e4e7eb);
+    --card-bg: linear-gradient(145deg, #ffffff, #f0f2f5);
+    --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    --text-color: #333;
+    --label-color: #4a4a8c;
+    --input-bg: #ffffff;
+    --input-border: #ccc;
+    --input-focus-border: #007bff;
+    --input-focus-shadow: rgba(0, 123, 255, 0.5);
+    --button-bg: linear-gradient(45deg, #007bff, #6f42c1);
+    --button-shadow: rgba(0, 123, 255, 0.4);
+    --result-valid-border: #007bff;
+    --result-valid-shadow: rgba(0, 123, 255, 0.3);
+    --error-color: #dc3545;
+    --discord-bg: linear-gradient(45deg, #5865F2, #007bff);
+    --github-bg: linear-gradient(45deg, #24292e, #6f42c1);
+    --youtube-bg: linear-gradient(45deg, #FF0000, #007bff);
+    --twitter-bg: linear-gradient(45deg, #1DA1F2, #6f42c1);
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    color: var(--input-focus-border);
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 1.1em;
+    color: var(--label-color);
+}
+
+select, input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+select:focus, input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 8px var(--input-focus-shadow);
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background: var(--button-bg);
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    font-family: 'Roboto Mono', monospace;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px var(--button-shadow);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-button {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.social-button.discord { background: var(--discord-bg); }
+.social-button.github { background: var(--github-bg); }
+.social-button.youtube { background: var(--youtube-bg); }
+.social-button.twitter { background: var(--twitter-bg); }
+
+.social-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px var(--button-shadow);
+}
+
+.social-button i {
+    font-size: 1.5em;
+    color: white;
+}
+
+.error {
+    color: var(--error-color);
+    border-color: var(--error-color);
+}
+
+.result-valid {
+    border-color: var(--result-valid-border);
+    box-shadow: 0 0 8px var(--result-valid-shadow);
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+    button, .social-button {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+    .social-button {
+        width: 35px;
+        height: 35px;
+    }
+    .social-button i {
+        font-size: 1.2em;
+    }
+}
