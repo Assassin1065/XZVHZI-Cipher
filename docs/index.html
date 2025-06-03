@@ -59,6 +59,7 @@
                 </svg>
             </a>
         </div>
+        <audio id="vine-boom" src="https://www.myinstants.com/media/sounds/vine-boom.mp3"></audio>
     </div>
 
     <script>
@@ -159,6 +160,9 @@
             const message = document.getElementById('message').value;
             const key = document.getElementById('key').value;
             const resultElement = document.getElementById('result');
+            const sound = document.getElementById('vine-boom');
+            sound.currentTime = 0;
+            sound.play();
             try {
                 if (!message) throw new Error('Message cannot be empty');
                 let output;
