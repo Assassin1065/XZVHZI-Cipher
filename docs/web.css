@@ -168,7 +168,7 @@ button:active {
 
 .social-button i {
     font-size: 1.5em;
-    color: white;
+    color: white !important;
 }
 
 .social-button svg {
@@ -177,12 +177,18 @@ button:active {
 }
 
 .social-button svg path {
-    fill: white;
+    fill: white !important;
 }
 
 .social-button i, .social-button svg {
     border: none;
     outline: none;
+}
+
+.light-mode .social-button i,
+.light-mode .social-button svg path {
+    color: white !important;
+    fill: white !important;
 }
 
 .error {
