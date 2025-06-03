@@ -152,6 +152,7 @@ button:active {
     justify-content: center;
     border-radius: 50%;
     transition: transform 0.2s, box-shadow 0.3s;
+    text-decoration: none;
 }
 
 .social-button.discord { background: var(--discord-bg); }
@@ -164,19 +165,27 @@ button:active {
     box-shadow: 0 4px 15px var(--button-shadow);
 }
 
-.social-button i, .social-button svg {
+.social-button i {
     font-size: 1.5em;
     width: 1.5em;
     height: 1.5em;
     color: white;
+    display: block;
+    text-align: center;
 }
 
-.light-mode .social-button i, .light-mode .social-button svg {
+.light-mode .social-button i {
     color: #333;
 }
 
+.social-button svg {
+    width: 1.2em;
+    height: 1.2em;
+    display: block;
+}
+
 .social-button svg path {
-    fill: currentColor;
+    fill: white;
 }
 
 .error {
@@ -206,4 +215,4 @@ button:active {
         width: 1.2em;
         height: 1.2em;
     }
-    }
+}
