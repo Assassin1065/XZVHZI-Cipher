@@ -9,14 +9,14 @@
     --input-focus-border: #a100ff;
     --input-focus-shadow: rgba(161, 0, 255, 0.5);
     --button-bg: linear-gradient(45deg, #a100ff, #c07bff);
-    --button-shadow: rgba(161, 0, 255, 0.55);
+    --button-shadow: rgba(161, 0, 255, 0.4);
     --result-valid-border: #a100ff;
     --result-valid-shadow: rgba(161, 0, 255, 0.3);
     --error-color: #ff4d4d;
-    --discord-bg: linear-gradient(45deg, #5865F2, #8a4af3);
+    --discord-bg: linear-gradient(45deg, #5865F2, #a100ff);
     --github-bg: linear-gradient(45deg, #24292e, #a100ff);
-    --youtube-bg: linear-gradient(45deg, #FF0000, #c07bff);
-    --twitter-bg: linear-gradient(45deg, #1DA1F2, #a100ff);
+    --youtube-bg: linear-gradient(45deg, #FF0000, #a100ff);
+    --twitter-bg: linear-gradient(45deg, #000000, #a100ff);
 }
 
 .light-mode {
@@ -35,9 +35,9 @@
     --result-valid-shadow: rgba(0, 123, 255, 0.3);
     --error-color: #dc3545;
     --discord-bg: linear-gradient(45deg, #5865F2, #007bff);
-    --github-bg: linear-gradient(45deg, #24292e, #6f42c1);
+    --github-bg: linear-gradient(45deg, #24292e, #007bff);
     --youtube-bg: linear-gradient(45deg, #FF0000, #007bff);
-    --twitter-bg: linear-gradient(45deg, #1DA1F2, #6f42c1);
+    --twitter-bg: linear-gradient(45deg, #000000, #007bff);
 }
 
 body {
@@ -164,9 +164,19 @@ button:active {
     box-shadow: 0 4px 15px var(--button-shadow);
 }
 
-.social-button i {
+.social-button i, .social-button svg {
     font-size: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
     color: white;
+}
+
+.light-mode .social-button i, .light-mode .social-button svg {
+    color: #333;
+}
+
+.social-button svg path {
+    fill: currentColor;
 }
 
 .error {
@@ -191,7 +201,9 @@ button:active {
         width: 35px;
         height: 35px;
     }
-    .social-button i {
+    .social-button i, .social-button svg {
         font-size: 1.2em;
+        width: 1.2em;
+        height: 1.2em;
     }
-}
+    }
